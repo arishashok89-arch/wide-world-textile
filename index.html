@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STYLE HUB - Fashion Store</title>
+
+<!-- BOOTSTRAP CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- INTERNAL CSS -->
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f8f5f2;font-family:Arial,sans-serif;color:#292929}
+header{background:#171717;color:white;text-align:center;padding:25px}
+header h1{font-size:40px;font-weight:bold;letter-spacing:5px}
+nav{background:#a64d63;padding:12px;text-align:center;position:sticky;top:0;z-index:100}
+nav button{background:transparent;color:white;border:0;padding:12px 25px;font-weight:bold}
+nav button:hover,nav button.active{background:white;color:#a64d63;border-radius:5px}
+.page{display:none}
+.page.active{display:block}
+.hero{height:390px;background:linear-gradient(#0008,#0008),url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=1400') center/cover;display:flex;align-items:center;justify-content:center;flex-direction:column;color:white;text-align:center;padding:20px}
+.hero h2{font-size:48px;font-weight:bold}
+.section{padding:45px 6%}
+.section h2{text-align:center;color:#a64d63;font-weight:bold;margin-bottom:30px}
+.product{background:white;border-radius:10px;overflow:hidden;box-shadow:0 3px 12px #0002;height:100%;transition:.3s}
+.product:hover{transform:translateY(-6px)}
+.product img{width:100%;height:250px;object-fit:cover}
+.product-info{padding:18px}
+.price{color:#a64d63;font-size:22px;font-weight:bold}
+.btn-fashion{background:#a64d63;color:white;border:0;padding:10px 22px;border-radius:5px}
+.btn-fashion:hover{background:#713144;color:white}
+.gallery img{width:100%;height:220px;object-fit:cover;border-radius:10px}
+.media-box{background:white;padding:20px;border-radius:10px}
+video{width:100%;border-radius:10px}
+form{background:white;padding:25px;border-radius:10px;box-shadow:0 2px 10px #0002}
+footer{background:#171717;color:white;text-align:center;padding:30px}
+.page-controls{display:flex;justify-content:center;gap:15px;padding:30px}
+th{background:#a64d63!important;color:white!important}
+@media(max-width:600px){
+header h1{font-size:28px}
+.hero h2{font-size:32px}
+nav button{padding:10px 12px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>STYLE HUB</h1>
+<p>Your Fashion | Your Style | Your Identity</p>
+</header>
+
+<nav>
+<button id="nav1" class="active" onclick="showPage(1)">PAGE 1</button>
+<button id="nav2" onclick="showPage(2)">PAGE 2</button>
+<button id="nav3" onclick="showPage(3)">PAGE 3</button>
+</nav>
+
+<!-- ================= PAGE 1 MEN ================= -->
+
+<div class="page active" id="page1">
+
+<section class="hero">
+<h2>MEN'S COLLECTION</h2>
+<p>Discover the latest fashion trends for men</p>
+<button class="btn-fashion" onclick="scrollToProducts('menproducts')">Explore Now</button>
+</section>
+
+<section class="section">
+<h2>Welcome to Men's Fashion</h2>
+<p class="text-center">Explore premium shirts, jeans, jackets and casual wear. Find your perfect outfit at affordable prices.</p>
+</section>
+
+<section class="section" id="menproducts">
+<h2>Men's Latest Products</h2>
+<div class="row g-4">
+
+<div class="col-md-4"><div class="product">
+<img src="https://images.unsplash.com/photo-1603252109303-2751441dd157?w=600">
+<div class="product-info"><h4>Formal Shirt</h4><p>Premium cotton shirt.</p><p class="price">₹999</p><button class="btn-fashion" onclick="buy('Formal Shirt')">Buy Now</button></div>
+</div></div>
+
+<div class="col-md-4"><div class="product">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600">
+<div class="product-info"><h4>Casual T-Shirt</h4><p>Comfortable everyday wear.</p><p class="price">₹599</p><button class="btn-fashion" onclick="buy('Casual T-Shirt')">Buy Now</button></div>
+</div></div>
+
+<div class="col-md-4"><div class="product">
+<img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=600">
+<div class="product-info"><h4>Denim Jeans</h4><p>Classic blue denim.</p><p class="price">₹1299</p><button class="btn-fashion" onclick="buy('Denim Jeans')">Buy Now</button></div>
+</div></div>
+
+<div class="col-md-4"><div class="product">
+<img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600">
+<div class="product-info"><h4>Leather Jacket</h4><p>Premium stylish jacket.</p><p class="price">₹2499</p><button class="btn-fashion" onclick="buy('Leather Jacket')">Buy Now</button></div>
+</div></div>
+
+<div class="col-md-4"><div class="product">
+<img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=600">
+<div class="product-info"><h4>Printed T-Shirt</h4><p>Modern street fashion.</p><p class="price">₹799</p><button class="btn-fashion" onclick="buy('Printed T-Shirt')">Buy Now</button></div>
+</div></div>
+
+<div class="col-md-4"><div class="product">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=600">
+<div class="product-info"><h4>Casual Outfit</h4><p>Perfect weekend collection.</p><p class="price">₹1599</p><button class="btn-fashion" onclick="buy('Casual Outfit')">Buy Now</button></div>
+</div></div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>Men's Price List</h2>
+<div class="table-responsive">
+<table class="table table-bordered table-striped text-center">
+<tr><th>S.No</th><th>Product</th><th>Size</th><th>Price</th></tr>
+<tr><td>1</td><td>Formal Shirt</td><td>M, L, XL</td><td>₹999</td></tr>
+<tr><td>2</td><td>T-Shirt</td><td>S, M, L</td><td>₹599</td></tr>
+<tr><td>3</td><td>Jeans</td><td>30, 32, 34</td><td>₹1299</td></tr>
+<tr><td>4</td><td>Jacket</td><td>M, L, XL</td><td>₹2499</td></tr>
+</table>
+</div>
+</section>
+
+<section class="section">
+<h2>Men's Fashion Gallery</h2>
+<div class="row g-3 gallery">
+<div class="col-md-4"><img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?w=600"></div>
+<div class="col-md-4"><img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?w=600"></div>
+<div class="col-md-4"><img src="https://images.unsplash.com/photo-1488161628813-04466f872be2?w=600"></div>
+</div>
+</section>
+
+</div>
+
+<!-- ================= PAGE 2 WOMEN ================= -->
+
+<div class="page" id="page2">
+
+<section class="hero" style="background-image:linear-gradient(#0008,#0008),url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1400')">
+<h2>WOMEN'S COLLECTION</h2>
+<p>Elegant fashion for every occasion</p>
+</section>
+
+<section class="section">
+<h2>Welcome to Women's Fashion</h2>
+<p class="text-center">Discover beautiful dresses, sarees, tops and western wear.</p>
+</section>
+
+<section class="section">
+<h2>Women's Latest Products</h2>
+<div class="row g-4">
+
+<div class="col-md-4"><div class="product">
+<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600">
+<div class="product-info"><h4>Floral Dress</h4><p>Beautiful summer dress.</p><p class="price">₹1499</p><button class="btn-fashion" onclick="buy('Floral Dress')">Buy Now</button></div>
+</div></div>
+
+<div class="col-md-4"><div class="product">
+<img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=600">
+<div class="product-info"><h4>Women's Top</h4><p>Stylish casual top.</p><p class="price">₹799</p><button class="btn-fashion" onclick="buy('Womens Top')">Buy Now</button></div>
+</div></div>
+
+<div class="col-md-4"><div class="product">
+<img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600">
+<div class="product-info"><h4>Party Dress</h4><p>Elegant party collection.</p><p class="price">₹1999</p><button class="btn-fashion" onclick="buy('Party Dress')">Buy Now</button></div>
+</div></div>
+
+<div class="col-md-4"><div class="product">
+<img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600">
+<div class="product-info"><h4>Traditional Wear</h4><p>Traditional ethnic collection.</p><p class="price">₹2499</p><button class="btn-fashion" onclick="buy('Traditional Wear')">Buy Now</button></div>
+</div></div>
+
+<div class="col-md-4"><div class="product">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600">
+<div class="product-info"><h4>Western Outfit</h4><p>Modern western fashion.</p><p class="price">₹1799</p><button class="btn-fashion" onclick="buy('Western Outfit')">Buy Now</button></div>
+</div></div>
+
+<div class="col-md-4"><div class="product">
+<img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600">
+<div class="product-info"><h4>Fashion Outfit</h4><p>Trendy everyday wear.</p><p class="price">₹1299</p><button class="btn-fashion" onclick="buy('Fashion Outfit')">Buy Now</button></div>
+</div></div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>Women's Price List</h2>
+<div class="table-responsive">
+<table class="table table-bordered table-striped text-center">
+<tr><th>S.No</th><th>Product</th><th>Size</th><th>Price</th></tr>
+<tr><td>1</td><td>Floral Dress</td><td>S, M, L</td><td>₹1499</td></tr>
+<tr><td>2</td><td>Women's Top</td><td>S, M, XL</td><td>₹799</td></tr>
+<tr><td>3</td><td>Party Dress</td><td>M, L, XL</td><td>₹1999</td></tr>
+<tr><td>4</td><td>Traditional Wear</td><td>Free Size</td><td>₹2499</td></tr>
+</table>
+</div>
+</section>
+
+<section class="section">
+<h2>Women's Fashion Gallery</h2>
+<div class="row g-3 gallery">
+<div class="col-md-4"><img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600"></div>
+<div class="col-md-4"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600"></div>
+<div class="col-md-4"><img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600"></div>
+</div>
+</section>
+
+</div>
+
+<!-- ================= PAGE 3 KIDS ================= -->
+
+<div class="page" id="page3">
+
+<section class="hero" style="background-image:linear-gradient(#0008,#0008),url('https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=1400')">
+<h2>KIDS' COLLECTION</h2>
+<p>Little Fashion, Big Smiles!</p>
+</section>
+
+<section class="section">
+<h2>Welcome to Kids' Fashion</h2>
+<p class="text-center">Explore colorful, comfortable and fashionable clothing for children.</p>
+</section>
+
+<section class="section">
+<h2>Kids' Latest Products</h2>
+<div class="row g-4">
+
+<div class="col-md-4"><div class="product">
+<img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=600">
+<div class="product-info"><h4>Kids Party Dress</h4><p>Beautiful party wear.</p><p class="price">₹999</p><button class="btn-fashion" onclick="buy('Kids Party Dress')">Buy Now</button></div>
+</div></div>
+
+<div class="col-md-4"><div class="product">
+<img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600">
+<div class="product-info"><h4>Kids Casual Wear</h4><p>Comfortable everyday outfit.</p><p class="price">₹699</p><button class="btn-fashion" onclick="buy('Kids Casual Wear')">Buy Now</button></div>
+</div></div>
+
+<div class="col-md-4"><div class="product">
+<img src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?w=600">
+<div class="product-info"><h4>Baby Collection</h4><p>Soft baby clothing.</p><p class="price">₹599</p><button class="btn-fashion" onclick="buy('Baby Collection')">Buy Now</button></div>
+</div></div>
+
+<div class="col-md-4"><div class="product">
+<img src="https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?w=600">
+<div class="product-info"><h4>Kids Fashion</h4><p>Trendy kids outfit.</p><p class="price">₹899</p><button class="btn-fashion" onclick="buy('Kids Fashion')">Buy Now</button></div>
+</div></div>
+
+<div class="col-md-4"><div class="product">
+<img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=600">
+<div class="product-info"><h4>Special Occasion Dress</h4><p>Stylish celebration wear.</p><p class="price">₹1199</p><button class="btn-fashion" onclick="buy('Special Occasion Dress')">Buy Now</button></div>
+</div></div>
+
+<div class="col-md-4"><div class="product">
+<img src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?w=600">
+<div class="product-info"><h4>Kids Summer Wear</h4><p>Light summer clothing.</p><p class="price">₹749</p><button class="btn-fashion" onclick="buy('Kids Summer Wear')">Buy Now</button></div>
+</div></div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>Kids' Price List</h2>
+<div class="table-responsive">
+<table class="table table-bordered table-striped text-center">
+<tr><th>S.No</th><th>Product</th><th>Age</th><th>Price</th></tr>
+<tr><td>1</td><td>Party Dress</td><td>4-8 Years</td><td>₹999</td></tr>
+<tr><td>2</td><td>Casual Wear</td><td>5-10 Years</td><td>₹699</td></tr>
+<tr><td>3</td><td>Baby Collection</td><td>0-3 Years</td><td>₹599</td></tr>
+<tr><td>4</td><td>Summer Wear</td><td>4-10 Years</td><td>₹749</td></tr>
+</table>
+</div>
+</section>
+
+<section class="section">
+<h2>Kids' Fashion Gallery</h2>
+<div class="row g-3 gallery">
+<div class="col-md-4"><img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=600"></div>
+<div class="col-md-4"><img src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?w=600"></div>
+<div class="col-md-4"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600"></div>
+</div>
+</section>
+
+</div>
+
+<!-- MULTIMEDIA SECTION -->
+
+<section class="section">
+<h2>Fashion Multimedia Center</h2>
+<div class="row g-4">
+<div class="col-md-6">
+<div class="media-box">
+<h4>Fashion Video</h4>
+<video controls poster="https://images.unsplash.com/photo-1445205170230-053b83016050?w=700">
+<source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+Your browser does not support video.
+</video>
+<p class="mt-2">Watch our fashion collection video.</p>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="media-box">
+<h4>Audio Section</h4>
+<p>Listen to our fashion store music.</p>
+<audio controls class="w-100">
+<source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+Your browser does not support audio.
+</audio>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SIZE GUIDE TABLE -->
+
+<section class="section">
+<h2>Fashion Size Guide</h2>
+<div class="table-responsive">
+<table class="table table-bordered text-center">
+<tr><th>Size</th><th>Chest</th><th>Waist</th><th>Category</th></tr>
+<tr><td>S</td><td>36 inches</td><td>30 inches</td><td>Small</td></tr>
+<tr><td>M</td><td>38 inches</td><td>32 inches</td><td>Medium</td></tr>
+<tr><td>L</td><td>40 inches</td><td>34 inches</td><td>Large</td></tr>
+<tr><td>XL</td><td>42 inches</td><td>36 inches</td><td>Extra Large</td></tr>
+</table>
+</div>
+</section>
+
+<!-- ENQUIRY FORM -->
+
+<section class="section">
+<h2>Customer Enquiry Form</h2>
+<form onsubmit="submitForm(event)">
+<div class="row g-3">
+<div class="col-md-6">
+<label class="form-label">Full Name</label>
+<input type="text" class="form-control" required placeholder="Enter your name">
+</div>
+<div class="col-md-6">
+<label class="form-label">Email Address</label>
+<input type="email" class="form-control" required placeholder="Enter email">
+</div>
+<div class="col-md-6">
+<label class="form-label">Phone Number</label>
+<input type="tel" class="form-control" required placeholder="Enter phone number">
+</div>
+<div class="col-md-6">
+<label class="form-label">Select Collection</label>
+<select class="form-select">
+<option>Men's Collection</option>
+<option>Women's Collection</option>
+<option>Kids' Collection</option>
+</select>
+</div>
+<div class="col-12">
+<label class="form-label">Your Message</label>
+<textarea class="form-control" rows="4" placeholder="Write your enquiry"></textarea>
+</div>
+<div class="col-12 text-center">
+<button class="btn-fashion" type="submit">Submit Enquiry</button>
+</div>
+</div>
+</form>
+</section>
+
+<!-- CONTACT -->
+
+<section class="section text-center">
+<h2>Contact STYLE HUB</h2>
+<p><b>Email:</b> stylehub@example.com</p>
+<p><b>Phone:</b> +91 98765 43210</p>
+<p><b>Address:</b> Fashion Street, India</p>
+<p><b>Opening Hours:</b> Monday - Saturday, 10 AM - 9 PM</p>
+</section>
+
+<footer>
+<h3>STYLE HUB</h3>
+<p>Fashion for Everyone</p>
+<p>© 2026 STYLE HUB. All Rights Reserved.</p>
+</footer>
+
+<!-- PREVIOUS / NEXT BUTTONS -->
+
+<div class="page-controls">
+<button class="btn btn-dark" onclick="changePage(-1)">← Previous Page</button>
+<button class="btn btn-danger" onclick="changePage(1)">Next Page →</button>
+</div>
+
+<!-- INTERNAL JAVASCRIPT -->
+
+<script>
+let currentPage = 1;
+
+function showPage(number) {
+    currentPage = number;
+
+    document.querySelectorAll('.page').forEach(function(page) {
+        page.classList.remove('active');
+    });
+
+    document.getElementById('page' + number).classList.add('active');
+
+    document.querySelectorAll('nav button').forEach(function(btn) {
+        btn.classList.remove('active');
+    });
+
+    document.getElementById('nav' + number).classList.add('active');
+
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function changePage(direction) {
+    let next = currentPage + direction;
+
+    if (next < 1) next = 1;
+    if (next > 3) next = 3;
+
+    showPage(next);
+}
+
+function buy(product) {
+    alert("You selected: " + product + "\nThank you for shopping with STYLE HUB!");
+}
+
+function scrollToProducts(id) {
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+function submitForm(event) {
+    event.preventDefault();
+    alert("Thank you! Your enquiry has been submitted successfully.");
+    event.target.reset();
+}
+</script>
+
+</body>
+</html>
